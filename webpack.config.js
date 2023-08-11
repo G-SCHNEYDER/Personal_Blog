@@ -15,7 +15,7 @@ Encore
     //.setManifestKeyPrefix('build/')
 
     // Enables postCSS
-    .enablePostCssLoader()
+    // .enablePostCssLoader()
 
     /*
      * ENTRY CONFIG
