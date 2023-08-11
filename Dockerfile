@@ -17,7 +17,7 @@ RUN apt-get upgrade -y && \
 
 COPY docker/apache.conf /etc/apache2/sites-enabled/000-default.conf
 COPY docker/entrypoint.sh /entrypoint.sh
-COPY . /var/www
+# COPY . /var/www
 
 WORKDIR /var/www
 
@@ -26,6 +26,6 @@ CMD ["apache2-foreground"]
 RUN npm install
 
 RUN chmod +x /entrypoint.sh
-RUN chown -R www-data:www-data var
+# RUN chown -R www-data:www-data var/
 
 ENTRYPOINT ["/entrypoint.sh"]
