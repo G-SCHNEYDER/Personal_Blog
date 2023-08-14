@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
  
 composer install -n
 bin/console doc:mig:mig --no-interaction
