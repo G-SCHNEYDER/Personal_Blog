@@ -17,6 +17,9 @@ Encore
     // Enables postCSS
     .enablePostCssLoader()
 
+    // Enables React
+    .enableReactPreset()
+
     /*
      * ENTRY CONFIG
      *

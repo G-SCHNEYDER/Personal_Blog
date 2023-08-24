@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 body {
-    background-color: #010042;
+    background: black;
 }
+
 
 .dot-red, .dot-yellow, .dot-green{
     width: 12px;
@@ -15,19 +16,5 @@ body {
 /* Prompt animation */
 
 .prompt{
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4), 0 25px 15px -10px rgba(0, 0, 0, 0.5);
-}
-
-.prompt:hover{
-        box-shadow: 
-          -20px -20px 30px -25px var(--color1), 
-          20px 20px 30px -25px var(--color2), 
-          -7px -7px 10px -5px var(--color1), 
-          7px 7px 10px -5px var(--color2), 
-          0 0 13px 4px rgba(255,255,255,0.3),
-          0 55px 35px -20px rgba(0, 0, 0, 0.5);
-}
-
-.prompt-body{
-    font-family: monospace;
+    box-shadow: #7e7e7e 0px 22px 55px -22px;
 }

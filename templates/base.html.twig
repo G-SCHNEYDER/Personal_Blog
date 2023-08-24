@@ -20,7 +20,22 @@
 
     {# Main container #}
     <body>
-        {% block body %}{% endblock %}
+        <div class="presentation-block flex h-screen ">
+            <div class="my-auto w-full">
+                <div class="prompt mx-auto rounded-md bg-black h-[80vh] w-4/5 border border-slate-400">
+                    <div class="prompt-head flex flex-row gap-2 rounded-t bg-slate-400 py-2 px-3 w-full">
+                        <div class="dot-red bg-red-500"></div>
+                        <div class="dot-yellow bg-yellow-500"></div>
+                        <div class="dot-green bg-green-500"></div>
+                    </div>
+                    <div class="prompt-body h-full m-4 text-lime-400">
+                        {# Main content #}
+                        {% block body %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </body>
 
 </html>
