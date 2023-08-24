@@ -6,6 +6,11 @@ body {
     background: black;
 }
 
+.particles-js-canvas-el{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+}
 
 .dot-red, .dot-yellow, .dot-green{
     width: 12px;
@@ -15,6 +20,6 @@ body {
 
 /* Prompt animation */
 
-.prompt{
+/* .prompt{
     box-shadow: #7e7e7e 0px 22px 55px -22px;
-}
+} */
