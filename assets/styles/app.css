@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Turret+Road:wght@700;800&family=Ubuntu+Condensed&display=swap');
+
 body {
     background: black;
 }
@@ -12,14 +16,64 @@ body {
     top: 0;
 }
 
+.prompt{
+    margin: 50px;
+}
+
 .dot-red, .dot-yellow, .dot-green{
     width: 12px;
     height: 12px;
     border-radius: 50%;
 }
 
-/* Prompt animation */
+.presentation-space{
+    margin-right: auto;
+    margin-left: auto;
+    width: 60%;
+    margin-top: 150px;
+}
 
-/* .prompt{
-    box-shadow: #7e7e7e 0px 22px 55px -22px;
-} */
+.title-job{
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: 3rem;
+}
+
+.title-plain{
+    color: #1E7300;
+}
+
+.title-green-border{
+    color: black;
+    text-shadow: 2px 0 #1E7300, -2px 0 #1E7300, 0 2px #1E7300, 0 -2px #1E7300, 1px 1px #1E7300, -1px -1px #1E7300, 1px -1px #1E7300, -1px 1px #1E7300;
+}
+
+.title-green-code{
+    font-size: 1rem;
+    color: #1E7300;
+    font-family: 'Turret Road', cursive;
+}
+
+.presentation-text{
+    color :white;
+    font-weight: bold;
+    font-family: 'Turret Road', cursive;
+    font-size: 14px;
+}
+
+.btn-green{
+    background-color: #1E7300;
+    color: white;
+    font-family: 'Turret Road', cursive;
+    font-size: 18px;
+    padding: 12px 3px;
+}
+
+.btn-green span{
+    border: 4px solid black;
+    padding: 9px 17px;
+}
+
+.img-presentation img{
+    max-width: 85%;
+    margin-top: 100px;
+}

@@ -4,12 +4,24 @@
 
 {% block body %}
 
-    <div class="grid grid-cols-3 gap-4">
-        <div class="grid-span-2 presentation-space">
-
+    <div class="grid grid-cols-3 gap-4 mt-4 mx-4">
+        <div class="col-span-2 presentation-space">
+            <p class="title-job text-left">
+                <span class="title-plain">Ingénieur</span>
+                <span class="title-green-border">FullStack</span>
+            </p>
+            <p class="title-green-code text-left">< Schneyder --G uillaume /></p>
+            <p class="presentation-text text-left mt-5">
+                Bonjour ! Je m’appelle Guillaume SCHNEYDER et je développe des applications web en tant qu’ingénieur full stack. 
+            </p>
+            <div class="flex justify-between mt-5">
+                <a href="" class="btn-green"><span>Projet</span></a>
+                <a href="" class="btn-green"><span>Contact</span></a>
+                <a href="" class="btn-green"><span>M'engager</span></a>
+            </div>
         </div>
         <div class="img-presentation">
-        
+            <img src="{{ asset('build/images/profil.jpg') }}" alt="">
         </div>
     </div>
 
