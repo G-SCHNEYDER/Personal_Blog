@@ -29,22 +29,21 @@ body {
 .presentation-space{
     margin-right: auto;
     margin-left: auto;
-    width: 60%;
+    width: 380px;
     margin-top: 150px;
-}
-
-.title-job{
-    font-family: 'Ubuntu Condensed', sans-serif;
-    font-size: 3rem;
 }
 
 .title-plain{
     color: #1E7300;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: 3rem;
 }
 
 .title-green-border{
     color: black;
     text-shadow: 2px 0 #1E7300, -2px 0 #1E7300, 0 2px #1E7300, 0 -2px #1E7300, 1px 1px #1E7300, -1px -1px #1E7300, 1px -1px #1E7300, -1px 1px #1E7300;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: 3rem;
 }
 
 .title-green-code{
@@ -74,6 +73,15 @@ body {
 }
 
 .img-presentation img{
-    max-width: 85%;
+    max-width: 300px;
     margin-top: 100px;
+}
+
+.separator{
+    margin: 50px 7%;
+    color: #1E7300;
+    font-size: 20px;
+    letter-spacing: 4px;
+    max-height: 22px;
+    overflow: hidden;
 }
