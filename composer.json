@@ -16,5 +16,11 @@
       "name": "Jan Lucki",
       "email": "jan@lucki.dev"
     }
-  ]
+  ],
+  "config": {
+    "allow-plugins": {
+      "symfony/flex": true,
+      "symfony/runtime": true
+    }
+  }
 }

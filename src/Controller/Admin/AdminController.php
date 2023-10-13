@@ -2,13 +2,16 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\BlogPost;
-use App\Form\BlogPostType;
+use App\Entity\Project;
+use App\Form\ProjectType;
+use App\Repository\ProjectRepository;
+use Doctrine\ORM\EntityManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 class AdminController extends AbstractController
 {
@@ -18,39 +21,68 @@ class AdminController extends AbstractController
     private $em;
 
 
-    #[Route('/admin/', name: 'blog_admin_posts')]
+    #[Route('/admin/', name: 'admin_index')]
     public function index(): Response
     {
 
-        return $this->render('admin/posts.html.twig', [
-            'controller_name' => 'BlogAdminController',
+        return $this->render('admin/index.html.twig', [
+            'controller_name' => 'AdminController',
         ]);
     }
 
-    // #[Route('/blog/admin/post/add', name: 'blog_admin_post_add')]
-    // public function new(Request $request): Response
-    // {
+    #[Route('admin/projects/', name: 'admin_projects')]
+    public function display_projects(ProjectRepository $projectRepository): Response
+    {
 
-    //     return $this->render('admin/add.html.twig', [
-    //         'controller_name' => 'BlogAdminController',
-    //     ]);
-    // }
+        $projects = $projectRepository->findAll();
 
-    // #[Route('/blog/admin/post/edit/{id}', name: 'blog_admin_post_edit')]
-    // public function edit(BlogPost $post): Response
-    // {
+        return $this->render('admin/projects.html.twig',[
+            'list_projects' => $projects,
+        ]);
+    }
 
-    //     return $this->render('admin/edit.html.twig', [
-    //         'controller_name' => 'BlogAdminController',
-    //     ]);
-    // }
+    #[Route('admin/project/add/', name: 'admin_add_projects')]
+    public function add_project(EntityManagerInterface $entityManager, Request $request): Response
+    {
 
-    // #[Route('/blog/admin/post/remove/{id}', name: 'blog_admin_post_remove')]
-    // public function remove(BlogPost $post): Response
-    // {
-    //     $this->em->remove($post);
-    //     $this->em->flush();
+        $msg = "";
 
-    //     return $this->redirectToRoute('/blog/admin/posts');
-    // }
+        // Create project form
+        $form = $this->createForm(ProjectType::class);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid())
+        {
+            $project = $form->getData();
+
+            // Save new project
+            $entityManager->persist($project);
+            $entityManager->flush();
+
+            $msg = "Un nouveau projet a été enregistré";
+
+        }
+
+        return $this->render('admin/project_add.html.twig',[
+            'form' => $form,
+            'Msg' => $msg,
+        ]);
+    }
+
+    #[Route('admin/project/{id}/', name: 'admin_project_show')]
+    public function show_project(Project $project): Response
+    {
+
+        if(!$project){
+            throw $this->createNotFoundException(
+                "Aucun projet n'a été trouvé pour cet identifiant"
+            );
+        }
+
+        return $this->render('admin/project_show.html.twig',[
+            'Project' => $project,
+        ]);
+    }
+
 }

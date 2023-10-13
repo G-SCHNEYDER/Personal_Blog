@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/base.html.twig' %}
 
 {% block body %}
 <style>
@@ -7,12 +7,18 @@
 </style>
 
 <div class="example-wrapper">
+
     <ul>
-    
-        {% for post in posts %}
-            <li>{{post.title}}</li>
+
+        {% for project in list_projects %}
+
+            <li>{{project.id}}</li>
+            <li>{{project.name}}</li>
+
         {% endfor %}
 
     </ul>
+
 </div>
+
 {% endblock %}

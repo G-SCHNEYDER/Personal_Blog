@@ -4,33 +4,48 @@
 
 {% block body %}
 
-    <div class="grid grid-cols-3 gap-4 mt-4 mx-4">
-        <div class="col-span-2 presentation-space">
-            <h1 class="title-job text-left">
-                <span class="title-plain">Ingénieur</span>
-                <span class="title-green-border">FullStack</span>
-            </h1>
-            <p class="title-green-code text-left">< Schneyder --G uillaume /></p>
-            <p class="presentation-text text-left mt-5">
-                Bonjour ! Je m’appelle Guillaume SCHNEYDER et je développe des applications web en tant qu’ingénieur full stack. 
-            </p>
-            <div class="flex justify-between mt-5">
-                <a href="" class="btn-green"><span>Projet</span></a>
-                <a href="" class="btn-green"><span>Contact</span></a>
-                <a href="" class="btn-green"><span>M'engager</span></a>
+    <div class="w-4/5 mx-auto">
+        <div class="grid lg:grid-cols-2 grid-cols-1 flex-wrap gap-6 mt-4">
+            <div class="presentation-space mx-auto">
+                <h1 class="title-job text-left">
+                    <span class="title-plain">Ingénieur</span>
+                    <span class="title-green-border">FullStack</span>
+                </h1>
+                <p class="title-green-code text-left">< Schneyder --G uillaume /></p>
+                <p class="presentation-text text-left mt-5">
+                    Bonjour ! Je m’appelle Guillaume SCHNEYDER et je développe des applications web en tant qu’ingénieur full stack. 
+                </p>
+                <div class="flex justify-between mt-5">
+                    <a href="" class="btn-green"><span>Projets</span></a>
+                    <a href="" class="btn-green"><span>Contact</span></a>
+                    <a href="" class="btn-green"><span>M'engager</span></a>
+                </div>
             </div>
+            <div class="img-presentation">
+                <img class="mx-auto" src="{{ asset('build/images/profil.jpg') }}" alt="">
+            </div>
+
         </div>
-        <div class="img-presentation">
-            <img src="{{ asset('build/images/profil.jpg') }}" alt="">
+
+        <p class="separator text-center">==================================================================</p>
+
+        <div class="md:container md:mx-auto">
+
+            <h2 class="title-plain text-left">Projets</h2>
+
+            <div class="project-container grid lg:grid-cols-2 grid-cols-1 gap-4 my-5">
+                <div class="project-bloc rounded-md w-full">
+                    <div class="project-bloc-head">
+                    </div>
+                    <div class="project-bloc-body">
+                    
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-    </div>
-
-    <p class="separator text-center">==================================================================</p>
-
-    <div class="md:container md:mx-auto">
-
-        <h2 class="title-plain">Projets</h2>
+        <p class="separator text-center">==================================================================</p>
 
     </div>
 
