@@ -12,7 +12,6 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 
-
 #[IsGranted('ROLE_ADMIN')]
 class AdminController extends AbstractController
 {
@@ -22,14 +21,14 @@ class AdminController extends AbstractController
     private $em;
 
 
-    #[Route('/admin/', name: 'admin_index')]
-    public function index(): Response
-    {
+    // #[Route('/admin/', name: 'admin_index')]
+    // public function index(): Response
+    // {
 
-        return $this->render('admin/index.html.twig', [
-            'controller_name' => 'AdminController',
-        ]);
-    }
+    //     return $this->render('admin/index.html.twig', [
+    //         'controller_name' => 'AdminController',
+    //     ]);
+    // }
 
     #[Route('admin/projects/', name: 'admin_projects')]
     public function display_projects(ProjectRepository $projectRepository): Response

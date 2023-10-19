@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ProjectRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\BrowserKit\Response;
 
 #[ORM\Entity(repositoryClass: ProjectRepository::class)]
 class Project

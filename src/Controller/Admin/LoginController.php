@@ -11,7 +11,7 @@ use Symfony\Component\Security\Http\Attribute\CurrentUser;
 
 class LoginController extends AbstractController
 {
-    #[Route('/admin/login', name: 'admin_login')]
+    #[Route('/login', name: 'admin_login')]
     public function index(#[CurrentUser] ?User $user, AuthenticationUtils $authenticationUtils): Response
     {
 
@@ -21,14 +21,16 @@ class LoginController extends AbstractController
         // Récupère le dernier identifiant utilisateur utilisé
         $lastUserIdentifier = $authenticationUtils->getLastUsername();
 
-        // Ajoute le rôle admin au moment de la connection
-        if($user !== null){
-            $user->setRoles(['ROLE_ADMIN']);
-        }
-
-        return $this->render('admin/login.html.twig', [
+        return $this->render('@EasyAdmin/page/login.html.twig', [
             'last_username' => $lastUserIdentifier,
             'error' => $error,
         ]);
+    }
+
+    #[Route('/logout', name: 'admin_logout', methods: ['GET'])]
+    public function logout(): never
+    {
+        // controller can be blank: it will never be called!
+        throw new \Exception('Don\'t forget to activate logout in security.yaml');
     }
 }
