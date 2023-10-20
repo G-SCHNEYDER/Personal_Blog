@@ -34,13 +34,21 @@
             <h2 class="title-plain text-left">Projets</h2>
 
             <div class="project-container grid lg:grid-cols-2 grid-cols-1 gap-4 my-5">
-                <div class="project-bloc rounded-md w-full">
-                    <div class="project-bloc-head">
+
+            {% for project in projects %}
+                    <div class="project-bloc rounded-md w-full">
+
+                        <div class="project-bloc-head text-white">
+                            {{ project.name }}
+                        </div>
+
+                        <div class="project-bloc-body">
+                            <img src="build/images/{{ project.imgurl }}" alt="">
+                        </div>
+
                     </div>
-                    <div class="project-bloc-body">
-                    
-                    </div>
-                </div>
+                {% endfor %}
+
             </div>
 
         </div>

@@ -21,7 +21,7 @@ class LoginController extends AbstractController
         // Récupère le dernier identifiant utilisateur utilisé
         $lastUserIdentifier = $authenticationUtils->getLastUsername();
 
-        return $this->render('@EasyAdmin/page/login.html.twig', [
+        return $this->render('admin/login.html.twig', [
             'last_username' => $lastUserIdentifier,
             'error' => $error,
         ]);
